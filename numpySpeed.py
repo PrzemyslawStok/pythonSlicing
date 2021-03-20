@@ -3,9 +3,22 @@ import timeit
 import numpy as np
 from numba import jit
 
-def compileSpeed(arrayLength = 1000_00):
-    startTime = timeit.default_timer()
+
+@jit(nopython=True,cache=True)
+def compileSpeed(arrayLength=100_000):
     A = []
+
+    for i in range(arrayLength):
+        A.append(i)
+
+    for i in range(arrayLength):
+        A[i] = A[i] * A[i]
+
+
+def speedNumpy(arrayLength=100_000):
+    A = []
+
+    startTime = timeit.default_timer()
 
     for i in range(arrayLength):
         A.append(i)
@@ -15,24 +28,7 @@ def compileSpeed(arrayLength = 1000_00):
 
     endTime = timeit.default_timer()
 
-    print(f"numba time: {(endTime - startTime):0.5f}s")
-
-
-
-def speedNumpy():
-    A = []
-
-    startTime = timeit.default_timer()
-
-    for i in range(1000_000_0):
-        A.append(i)
-
-    for i in range(len(A)):
-        A[i] = A[i] * A[i]
-
-    endTime = timeit.default_timer()
-
-    print(f"elapsed time: {(endTime - startTime):0.5f}s")
+    print(f"elapsed time: {(endTime - startTime):0.5f}s arrayLength:{arrayLength}")
 
     startTime = timeit.default_timer()
 
@@ -43,8 +39,13 @@ def speedNumpy():
 
     print(f"elapsed time numpy: {(endTime - startTime):0.5f}s")
 
-speedNumpy()
+
+speedNumpy(arrayLength=10_000_000)
 
 for i in range(10):
-    compileSpeed()
+    startTime = timeit.default_timer()
+    compileSpeed(arrayLength=10_000_000)
+    # compileSpeed.parallel_diagnostics(level=4)
 
+    endTime = timeit.default_timer()
+    print(f"numba time: {(endTime - startTime):0.5f}s")
