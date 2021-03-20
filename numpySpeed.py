@@ -3,11 +3,11 @@ import timeit
 import numpy as np
 from numba import jit
 
-def compileSpeed():
+def compileSpeed(arrayLength = 1000_00):
     startTime = timeit.default_timer()
     A = []
 
-    for i in range(1000_000_0):
+    for i in range(arrayLength):
         A.append(i)
 
     for i in range(len(A)):
@@ -16,6 +16,7 @@ def compileSpeed():
     endTime = timeit.default_timer()
 
     print(f"numba time: {(endTime - startTime):0.5f}s")
+
 
 
 def speedNumpy():
@@ -44,6 +45,6 @@ def speedNumpy():
 
 speedNumpy()
 
-compileSpeed()
-compileSpeed()
+for i in range(10):
+    compileSpeed()
 
