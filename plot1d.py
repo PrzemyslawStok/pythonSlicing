@@ -1,24 +1,31 @@
 import numpy as np
 from matplotlib import pyplot as plot
 
+
 def plotFunction(x: np.ndarray, y: np.ndarray):
     plot.plot(x, y)
-    plot.show()
 
 
-x: np.ndarray = np.linspace(-10, 10, 100)
+x: np.ndarray = np.linspace(-1.0, 1.0, 100)
 y: np.ndarray = np.sin(x)
 
-print(x)
+# print(x)
 
-plot.plot(x,y)
+plot.plot(x, y)
+# plot.show()
+
+plot.plot(x, y + x)
+# plot.show()
+
+for i in range(1, 5):
+    y = x ** i
+    plotFunction(x, y)
+    plot.show()
+
+for i in range(1, 5):
+    y = x ** i
+    plotFunction(x, y)
+
 plot.show()
 
-plot.plot(x,y+x)
-plot.show()
-
-for i in range(5):
-    pass
-
-#proszę narysować obrazki dla x, x^2 ... x^5
-
+# proszę narysować obrazki dla x, x^2 ... x^5
