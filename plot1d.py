@@ -9,6 +9,14 @@ def plotFunction(x: np.ndarray, y: np.ndarray):
 x: np.ndarray = np.linspace(-1.0, 1.0, 100)
 y: np.ndarray = np.sin(x)
 
+# print(x)
+
+plot.plot(x, y)
+# plot.show()
+
+plot.plot(x, y + x)
+# plot.show()
+
 #for i in range(1, 5):
 #    y = x ** i
 #    plotFunction(x, y)
