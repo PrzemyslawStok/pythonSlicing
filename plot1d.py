@@ -11,7 +11,7 @@ y: np.ndarray = np.sin(x)
 
 # print(x)
 
-plot.figure(figsize=(5, 5))
+figure = plot.figure(figsize=(5, 5))
 plot.plot(x, y)
 # plot.show()
 
@@ -29,6 +29,17 @@ for i in range(1, 26):
     plot.gca().axes.xaxis.set_visible(False)
     plot.gca().axes.yaxis.set_visible(False)
     plot.plot(x, y)
+
+plot.show()
+
+figure, ax = plot.subplots(5, 5)
+print(np.shape(ax))
+
+for i in range(0, 5):
+    for j in range(0, 5):
+        y = x ** ((i + 1) * (j + 1))
+        ax[i, j].plot(x, y)
+
 
 plot.show()
 
