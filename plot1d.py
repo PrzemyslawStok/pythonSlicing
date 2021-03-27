@@ -11,20 +11,22 @@ y: np.ndarray = np.sin(x)
 
 # print(x)
 
+plot.figure(figsize=(5, 5))
 plot.plot(x, y)
 # plot.show()
 
 plot.plot(x, y + x)
-# plot.show()
+plot.show()
 
-#for i in range(1, 5):
+# for i in range(1, 5):
 #    y = x ** i
 #    plotFunction(x, y)
 #    plot.show()
 
-for i in range(1, 5):
+for i in range(1, 26):
     y = x ** i
-    plotFunction(x, y)
+    plot.subplot(5, 5, i)
+    plot.plot(x, y)
 
 plot.show()
 
