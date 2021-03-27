@@ -26,8 +26,11 @@ plot.show()
 for i in range(1, 26):
     y = x ** i
     plot.subplot(5, 5, i)
+    plot.gca().axes.xaxis.set_visible(False)
+    plot.gca().axes.yaxis.set_visible(False)
     plot.plot(x, y)
 
 plot.show()
 
 # proszę narysować obrazki dla x, x^2 ... x^5
+# proszę narysować dwa wykresy zbiorcze
