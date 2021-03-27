@@ -3,13 +3,9 @@ import timeit
 import numpy as np
 from numba import jit
 
-
-@jit(nopython=True,cache=True)
+@jit(nopython=True, cache=True)
 def compileSpeed(arrayLength=100_000):
-    A = []
-
-    for i in range(arrayLength):
-        A.append(i)
+    A = np.arange(0, arrayLength)
 
     for i in range(arrayLength):
         A[i] = A[i] * A[i]
@@ -45,7 +41,7 @@ speedNumpy(arrayLength=10_000_000)
 for i in range(10):
     startTime = timeit.default_timer()
     compileSpeed(arrayLength=10_000_000)
-    # compileSpeed.parallel_diagnostics(level=4)
+    # compileSpeed.parallel_diagnostics(level=1)
 
     endTime = timeit.default_timer()
     print(f"numba time: {(endTime - startTime):0.5f}s")
