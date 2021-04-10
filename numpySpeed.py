@@ -12,9 +12,9 @@ def compileSpeed(arrayLength=100_000):
 
 #@jit(nopython=True)
 def function0():
-    A = np.arange(0, 1000_000)
+    A = np.arange(0, 1000)
 
-    for i in range(1000_000):
+    for i in range(1000):
         A[i] = A[i] * A[i]
 
 
