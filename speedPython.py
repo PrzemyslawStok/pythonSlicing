@@ -36,3 +36,5 @@ functionSpeed(function0,"simple run",1)
 functionSpeed(function1,"numba run",5)
 functionSpeed(function2,"numpy run",5)
 functionSpeed(function3,"numpy compile run",5)
+
+#function1.inspect_types()
