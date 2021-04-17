@@ -4,6 +4,7 @@ import numpy as np
 from numba import jit, njit, prange
 
 import tensorflow as ts
+from matplotlib import pyplot as plot
 
 
 def function0():
@@ -32,7 +33,7 @@ def function3():
     A = A ** 2
 
 
-@njit(parallel=True)
+#@njit(parallel=True)
 def function_parallel():
     A = np.arange(0, 1000_000)
 
@@ -51,14 +52,22 @@ def functionSpeed(function, name: str, run_number=10):
 mnistData = ts.keras.datasets.mnist
 (training_images, training_labels), (test_images, test_labels) = mnistData.load_data()
 
-functionSpeed(function0, "simple run", 1)
-functionSpeed(function1, "numba run", 5)
-functionSpeed(function2, "numpy run", 5)
-functionSpeed(function3, "numpy compile run", 5)
-functionSpeed(function_parallel, "parallel numba run", 5)
+imageNo = 1
+
+plot.imshow(training_images[imageNo])
+plot.show()
+
+print(f"na obrazku numer {imageNo} znajduje się cyfra: {training_labels[imageNo]}")
+
+
+#functionSpeed(function0, "simple run", 1)
+#functionSpeed(function1, "numba run", 5)
+#functionSpeed(function2, "numpy run", 5)
+#functionSpeed(function3, "numpy compile run", 5)
+#functionSpeed(function_parallel, "parallel numba run", 5)
 
 print("---------------------------")
 
-function_parallel.parallel_diagnostics(level=4)
+#function_parallel.parallel_diagnostics(level=4)
 
 # function1.inspect_types()
