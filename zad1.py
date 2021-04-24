@@ -1,6 +1,6 @@
 import numpy as np
 
-#tworzymy macież 2d o rozmiarach 10x10
+#tworzymy macierz 2d o rozmiarach 10x10
 #do tej macierzy przyporządkujemy macierze losowe o rozmiarach 100x100
 
 #proszę zobaczyć ile program zajmuje w pamięci
