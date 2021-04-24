@@ -6,7 +6,6 @@ from numba import jit, njit, prange
 import tensorflow as ts
 from matplotlib import pyplot as plot
 
-
 def function0():
     A = np.arange(0, 1000_000)
 
@@ -71,3 +70,5 @@ print("---------------------------")
 #function_parallel.parallel_diagnostics(level=4)
 
 # function1.inspect_types()
+
+
