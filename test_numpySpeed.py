@@ -6,8 +6,14 @@ import timeit
 
 class Test(TestCase):
     def test_compile_speed(self):
-        speedNumpy(1000_000, showText=True)
-        self.assertTrue(True)
+        startTime = timeit.default_timer()
+        speedNumpy(1000_000, showText=False)
+        endTime = timeit.default_timer()
+
+        if endTime-startTime<0.21693:
+            self.assertTrue(True)
+        else:
+            self.fail(f"Funkcja nie jest wystarczająco szybka, czas działania: {(endTime - startTime):0.5f}s")
 
     def test_function0(self):
         self.assertTrue(True)
