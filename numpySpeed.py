@@ -3,6 +3,7 @@ import timeit
 import numpy as np
 from numba import jit
 
+
 @jit(nopython=True, cache=True)
 def compileSpeed(arrayLength=100_000):
     A = np.arange(0, arrayLength)
@@ -10,7 +11,8 @@ def compileSpeed(arrayLength=100_000):
     for i in range(arrayLength):
         A[i] = A[i] * A[i]
 
-#@jit(nopython=True)
+
+# @jit(nopython=True)
 def function0():
     A = np.arange(0, 1000)
 
@@ -18,7 +20,7 @@ def function0():
         A[i] = A[i] * A[i]
 
 
-def speedNumpy(arrayLength=100_000):
+def speedNumpy(arrayLength=100_000, showText=True):
     A = []
 
     startTime = timeit.default_timer()
@@ -31,7 +33,8 @@ def speedNumpy(arrayLength=100_000):
 
     endTime = timeit.default_timer()
 
-    print(f"elapsed time: {(endTime - startTime):0.5f}s arrayLength:{arrayLength}")
+    if showText:
+        print(f"elapsed time: {(endTime - startTime):0.5f}s arrayLength:{arrayLength}")
 
     startTime = timeit.default_timer()
 
@@ -40,17 +43,18 @@ def speedNumpy(arrayLength=100_000):
 
     endTime = timeit.default_timer()
 
-    print(f"elapsed time numpy: {(endTime - startTime):0.5f}s")
+    if showText:
+        print(f"elapsed time numpy: {(endTime - startTime):0.5f}s")
 
 
-speedNumpy(arrayLength=10_000_000)
+if __name__ == '__main__':
+    speedNumpy(arrayLength=10_000_000)
 
-for i in range(10):
-    startTime = timeit.default_timer()
-    function0()
-    #compileSpeed(arrayLength=10_000_000)
-    # compileSpeed.parallel_diagnostics(level=1)
+    for i in range(10):
+        startTime = timeit.default_timer()
+        function0()
+        # compileSpeed(arrayLength=10_000_000)
+        # compileSpeed.parallel_diagnostics(level=1)
 
-    endTime = timeit.default_timer()
-    print(f"numba time: {(endTime - startTime):0.5f}s")
-
+        endTime = timeit.default_timer()
+        print(f"numba time: {(endTime - startTime):0.5f}s")
