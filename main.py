@@ -19,7 +19,7 @@ A1 = np.empty([5, 5], dtype=np.ndarray)
 B = np.arange(0, 10000)
 B = np.reshape(B, [100, -1])
 
-M = np.random()
+M = np.random.random()
 
 print(A[1:6])
 
