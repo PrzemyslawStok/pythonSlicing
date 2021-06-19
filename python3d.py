@@ -63,7 +63,7 @@ axes.plot_surface(X,Y,Z,color='b')
 
 plot.show()
 
-student0: st = st()
+student0: st = st("Przemysław","Stoklosa")
 student0.print()
 
 print(student0.name)

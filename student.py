@@ -2,7 +2,12 @@ class student:
     name: str
     surname: str
     def __init__(self,name,surname):
-        pass
+        self.name = name
+        self.surname = surname
 
     def print(self):
-        print("Przykładowa funkcja")
+        print(f"name {self.name}")
+
+    @staticmethod
+    def printId(self):
+        print(10.0)
