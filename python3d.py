@@ -66,3 +66,4 @@ plot.show()
 student0: st = st()
 student0.print()
 
+print(student0.name)
