@@ -2,6 +2,8 @@ import numpy as np
 from matplotlib import pyplot as plot
 from mpl_toolkits.mplot3d import Axes3D
 
+from student import student as st
+
 print("Plot multiplot 2d")
 
 x: np.ndarray = np.linspace(-1.0, 1.0, 200)
@@ -60,3 +62,7 @@ Z = np.sin(np.sqrt(X*Y))
 axes.plot_surface(X,Y,Z,color='b')
 
 plot.show()
+
+student0: st = st()
+student0.print()
+
