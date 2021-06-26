@@ -13,14 +13,22 @@ class student:
     def printId():
         print(10.0)
 
+
 class students_repository:
     students_array: list
+
     def __init__(self):
+        self.students_array = []
+
+    def addStudent(self, students: student):
+        self.students_array.append(student)
+
+    def addStudents(self, students: list):
         pass
-    def addStudent(array: list, students: student):
-        pass
-    def addStudents(array: list, students: list):
-        pass
+
     def printStudents(self):
-        pass
-    pass
+        print("------------------------------------")
+        for Student in self.students_array:
+            pass
+
+
