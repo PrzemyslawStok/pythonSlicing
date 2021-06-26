@@ -10,5 +10,5 @@ class student:
         print(f"name {self.name}, surname {self.surname}")
 
     @staticmethod
-    def printId(self):
+    def printId():
         print(10.0)
