@@ -30,7 +30,6 @@ class students_repository:
     def printStudents(self):
         print("------------------------------------")
         for Student in self.students_array:
-            pass
-            #Student.print()
+            Student.print()
 
 

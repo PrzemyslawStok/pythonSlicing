@@ -18,6 +18,7 @@ for i in range(n):
 
 repository: srepo = srepo()
 repository.addStudent(Student("Przemysław", "Stokłosa"))
+repository.addStudents(students)
 repository.printStudents()
 
 # dodajemy n studentów z numerowanymi nazwiskami
