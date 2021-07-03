@@ -19,7 +19,8 @@ class student(person):
 
     @staticmethod
     def printId():
-        person.printId()
+        pass
+        #person.printId()
 
 class students_repository:
     students_array: list
