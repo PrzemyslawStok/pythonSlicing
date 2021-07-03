@@ -13,8 +13,8 @@ n = 10
 for i in range(n):
     students.append(Student("Przemysław", f"Stokłosa_{i}"))
 
-for student in students:
-    student.print()
+#for student in students:
+#    student.print()
 
 repository: srepo = srepo()
 repository.addStudent(Student("Przemysław", "Stokłosa"))

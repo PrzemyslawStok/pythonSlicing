@@ -24,11 +24,13 @@ class students_repository:
         self.students_array.append(student)
 
     def addStudents(self, students: list):
-        pass
+        for Student in students:
+            self.students_array.append(Student)
 
     def printStudents(self):
         print("------------------------------------")
         for Student in self.students_array:
             pass
+            #Student.print()
 
 
