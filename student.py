@@ -1,26 +1,32 @@
 class person:
     name: str
     surname: str
+    height: float
 
-    def __init__(self, name, surname):
+    def __init__(self, name, surname, height=175):
         self.name = name
         self.surname = surname
+        self.height = height
 
     def print(self):
-        print(f"name {self.name}, surname {self.surname}")
+        print(f"name {self.name}, surname {self.surname}, height {self.height}")
 
     @staticmethod
     def printId():
         print(10.0)
 
+
 class student(person):
-    def __init__(self, name, surname):
-        super().__init__(name, surname)
+    def __init__(self, name, surname, height=177):
+        super().__init__(name, surname, height)
 
     @staticmethod
     def printId():
         pass
-        #person.printId()
+        # person.printId()
+
+class teacher(person):
+    pass
 
 class students_repository:
     students_array: list
@@ -39,5 +45,3 @@ class students_repository:
         print("------------------------------------")
         for Student in self.students_array:
             Student.print()
-
-
