@@ -1,5 +1,5 @@
-from student import student as Student
-from student import persons_repository as srepo
+from persons import student as Student
+from persons import persons_repository as srepo
 import numpy as np
 
 student1: Student = Student("Przemysław", "Stokłosa")

@@ -2,7 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plot
 from mpl_toolkits.mplot3d import Axes3D
 
-from student import student as st
+from persons import student as st
 
 print("Plot multiplot 2d")
 
