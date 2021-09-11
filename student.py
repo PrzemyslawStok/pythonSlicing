@@ -31,20 +31,27 @@ class teacher(person):
         super().__init__(name,surname,height)
         self.lecture = lecture
 
-class students_repository:
-    students_array: list
+    def print(self):
+        pass
+
+class persons_repository:
+    persons_array: list
 
     def __init__(self):
-        self.students_array = []
+        self.persons_array = []
 
     def addStudent(self, Student: student):
-        self.students_array.append(Student)
+        self.persons_array.append(Student)
 
     def addStudents(self, students: list):
         for Student in students:
-            self.students_array.append(Student)
+            self.persons_array.append(Student)
+
+    def addPerson(self, personList: list):
+        for person in personList:
+            self.persons_array.append(person)
 
     def printStudents(self):
         print("------------------------------------")
-        for Student in self.students_array:
+        for Student in self.persons_array:
             Student.print()
