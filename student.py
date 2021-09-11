@@ -26,7 +26,10 @@ class student(person):
         # person.printId()
 
 class teacher(person):
-    pass
+    lecture: str
+    def __init__(self,name,surname,height,lecture):
+        super().__init__(name,surname,height)
+        self.lecture = lecture
 
 class students_repository:
     students_array: list
