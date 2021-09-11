@@ -43,8 +43,8 @@ class persons_repository:
     def addPerson(self, Person: person):
         self.persons_array.append(Person)
 
-    def addPersons(self, personList: list):
-        for person in personList:
+    def addPersons(self, personsList: list):
+        for person in personsList:
             self.persons_array.append(person)
 
     def printStudents(self):
