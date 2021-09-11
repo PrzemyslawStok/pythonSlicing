@@ -40,14 +40,10 @@ class persons_repository:
     def __init__(self):
         self.persons_array = []
 
-    def addStudent(self, Student: student):
-        self.persons_array.append(Student)
+    def addPerson(self, Person: person):
+        self.persons_array.append(Person)
 
-    def addStudents(self, students: list):
-        for Student in students:
-            self.persons_array.append(Student)
-
-    def addPerson(self, personList: list):
+    def addPersons(self, personList: list):
         for person in personList:
             self.persons_array.append(person)
 
